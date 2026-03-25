@@ -3,9 +3,9 @@
 <br>
 <br> 
 
-## <p>The CATalyst for your emotions</p>
+## <p align="center">The CATalyst for your emotions</p>
 
 <br>
 <br> 
 
-## <p>!!!Under Construction!!!</p>
+## <p align="center">!!!Under Construction!!!</p>
