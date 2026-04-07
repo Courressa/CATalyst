@@ -1,0 +1,16 @@
+.breed-info {
+    display: none;
+}
+
+.breed-info.visible {
+    display: block;
+}
+
+.info-arrow {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.info-arrow.rotated {
+    transform: rotateX(180deg);
+}
