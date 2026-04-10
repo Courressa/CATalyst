@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Jua', sans-serif;
+}
+
+h1 {
+    color: #007faa;
+    font-family: 'Bagel Fat One', cursive;
+    font-weight: 400;
+    text-shadow: 3px 2px 2px #fff;
+}
+
+h2, h3 {
+    font-family: 'Cherry Bomb One', cursive;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+
+/* Header color: #4b6a88;*/
+
+.header-container {
+    display: flex;
+    background-color: #5ee7ff;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    padding: 0 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 1rem;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #85c4ff;
+    padding: 0.5rem 1rem;
+    background-color: rgb(9, 56, 100);
+    transition: background-color 0.25s ease, color 0.25s ease;
+    border-radius: 0.7rem;
+    width: 7rem;
+    text-align: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-weight: 400;
+    font-size: 1.1rem;
+    box-shadow: 0.3rem 0.24rem 0rem 0rem rgb(0, 0, 0);
+}
+
+nav ul li a:hover {
+    background-color: #2a9fff;
+    color: #fff;
+}
+
+nav ul li a:active {
+    background-color: #48ffff;
+    color: #3835e6;
+    box-shadow: none;
+}
+
+nav ul li a.active {
+    background-color: #48ffff;
+    color: #3835e6;
+    box-shadow: 0.15rem 0.2rem 0rem 0rem rgb(0, 0, 0);
+}
+
+/* Main */
+
+main {
+    padding: 2rem;
+    flex: 1;
+    background-color: #dcfaff;
+}
+
+#welcome {
+    margin-bottom: 2rem;
+    height: 6rem;
+    justify-content: center;
+    position: relative;
+}
+
+#welcome h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#about-catalyst {
+    line-height: 1.5;
+}
+
+#about-catalyst h2 {
+    margin-bottom: 1rem;
+}
+
+#about-catalyst div {
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+
+footer {
+    background-color: #5ee7ff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
