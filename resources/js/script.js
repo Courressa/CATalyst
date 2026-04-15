@@ -31,20 +31,21 @@ const fourRandomNumbers = () => {
 
 /* Render images on the home page */
 const renderHomeImages = (imageUrls) => {
-    const welcomeContainer = document.getElementById('welcome');
+    const slideshowContainer = document.getElementById('slideshow-container');
     const fourCatImages = document.querySelectorAll('.four-cats');
     const randomIndices = fourRandomNumbers();
 
     // Clear any previous images (prevents duplicates if script runs twice)
-    welcomeContainer.querySelectorAll('img').forEach(img => img.remove());
+    slideshowContainer.querySelectorAll('img').forEach(img => img.remove());
 
     // Add 10 random images to the welcome section
-    imageUrls.forEach((url) => {
+    imageUrls.forEach((url, index) => {
         const img = document.createElement('img');
         img.src = url;
         img.alt = 'Adorable cat';
-        img.classList.add('welcome-image');
-        welcomeContainer.appendChild(img);
+        img.classList.add('slideshow-image');
+
+        slideshowContainer.appendChild(img);
     })
 
     // Set the 4 specific images for the design sections
@@ -54,6 +55,37 @@ const renderHomeImages = (imageUrls) => {
         }
     });
     
+    slideshowContainer.style.transition = 'transform 1.5s ease-in-out';
+    startSlideshow();
 }
 
-getImages();
+/* Add slideshow functionality */
+let currentIndex = 0;
+let slideshowInterval = null;
+
+const startSlideshow = () => {
+    const slideshowContainer = document.getElementById('slideshow-container');
+    const slideshowImages = document.querySelectorAll('.slideshow-image');
+
+    // No images to show if there are less than 2 images
+    if (slideshowImages.length < 2) return; 
+
+    // Clear any existing interval before starting a new one
+    if (slideshowInterval) clearInterval(slideshowInterval); 
+
+    currentIndex = 0;
+
+    // Show the first image immediately
+    slideshowContainer.style.transform = 'translateX(0)';
+
+    slideshowInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slideshowImages.length;
+
+        // Move the slideshow container to show the next image
+        slideshowContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }, 5000); // Change image every 5 seconds
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    getImages();
+});
