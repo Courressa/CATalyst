@@ -1,49 +1,38 @@
 const breedsContainer = document.getElementById('breed-list');
 
-const mockBreeds = [
-    {
-        id: "abys",
-        name: "Abyssinian",
-        description: "A highly active and playful breed...",
-        image: "https://...",
-        origin: "Ethiopia",
-        temperament: "Active, Energetic, Playful"
-    },
-    {
-        id: "beng",
-        name: "Bengal",
-        description: "Highly energetic and intelligent...",
-        image: "https://...",
-        origin: "United States",
-        temperament: "Energetic, Intelligent, Playful"
-    },
-    { 
-        id: "per", 
-        name: "Persian", 
-        description: "A docile and affectionate breed.", 
-        image: "https://...",
-        origin: "Iran",
-        temperament: "Calm, Gentle, Affectionate"
-    },
-    {   
-        id: "sia", 
-        name: "Siamese",
-        description: "A vocal and social breed.",
-        image: "https://...",
-        origin: "Thailand",
-        temperament: "Affectionate, Intelligent, Playful"
-    },
-];
+async function getBreeds() {
+    const urlToFetch = 'https://api.thecatapi.com/v1/breeds';
+
+    try {
+        const response = await fetch(urlToFetch);
+
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            renderBreeds(jsonResponse);
+        }
+    } catch (error) {
+        console.log('Failed to fetch cat breeds:', error);
+    };
+};
 
 const renderBreeds = (breeds) => {
     breedsContainer.innerHTML = '';
+
+    if (breeds.length === 0) {
+        breedsContainer.innerHTML = `
+        <p>No breeds found.</p>
+        <p>Try refreshing the page or check back later!</p>
+        `;
+        return;
+    };
 
     breeds.forEach(breed => {
         const breedCard = document.createElement('div');
         breedCard.classList.add('breed-card');
 
+        console.log(breed.reference_image_id);
         breedCard.innerHTML = `
-            <img src="${breed.image}" alt="${breed.name}">
+            <img src="https://cdn2.thecatapi.com/images/${breed.reference_image_id}.jpg" alt="${breed.name}">
             <h3>${breed.name}</h3>
 
             <div class="info-arrow">
@@ -66,7 +55,6 @@ const renderBreeds = (breeds) => {
 
         breedsContainer.appendChild(breedCard);
     });
+};
 
-}
-
-renderBreeds(mockBreeds);
+getBreeds();
