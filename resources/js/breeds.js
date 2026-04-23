@@ -1,4 +1,5 @@
 const breedsContainer = document.getElementById('breed-list');
+let favouriteBreeds = JSON.parse(localStorage.getItem('favouriteBreeds')) || [];
 
 async function getBreeds() {
     const urlToFetch = 'https://api.thecatapi.com/v1/breeds';
@@ -13,6 +14,10 @@ async function getBreeds() {
     } catch (error) {
         console.log('Failed to fetch cat breeds:', error);
     };
+};
+
+const saveFavouritesToLocalStorage = () => {
+    localStorage.setItem('favouriteBreeds', JSON.stringify(favouriteBreeds));
 };
 
 const renderBreeds = (breeds) => {
@@ -66,7 +71,24 @@ const renderBreeds = (breeds) => {
 
         favoriteIcon.addEventListener('click', () => {
             favoriteIcon.classList.toggle('liked');
+
+            if (favoriteIcon.classList.contains('liked')) {
+                favouriteBreeds.push(breed);
+            } else {
+                // Remove breed from favourites if unliked
+                const index = favouriteBreeds.findIndex(fav => fav.id === breed.id);
+                
+                if (index !== -1) {
+                    favouriteBreeds.splice(index, 1);
+                }
+            }; 
+
+            saveFavouritesToLocalStorage();
         });
+
+        if (favouriteBreeds.some(fav => fav.id === breed.id) && !favoriteIcon.classList.contains('liked')) {
+            favoriteIcon.classList.add('liked');
+        }
 
         breedsContainer.appendChild(breedCard);
     });
