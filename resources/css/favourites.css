@@ -1,0 +1,77 @@
+#favourites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #010041;
+}
+
+#favourites h2 {
+    margin-bottom: 2rem;
+    font-size: 4rem;
+}
+
+#favourite-list img {
+    width: 35%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.favourite-info {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.7s ease-in-out;
+}
+
+.favourite-info p {
+    margin: 1rem;
+}
+
+.favourite-info.visible {
+    max-height: 40rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(108, 103, 172) rgba(196, 196, 196, 0);
+}
+
+.favourite-card {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 75rem;
+    box-shadow: 0.6rem 0.6rem 1rem;
+    margin-bottom: 4rem;
+    opacity: 1;
+}
+
+.favourite-card.removed {
+    width: 10rem;
+    opacity: 0;
+    transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.favourite-card-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favourite-card-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 26rem;
+    text-align: center;
+}
+
+.favourite-images {
+    text-align: center;
+}
+
+.favourite-images img {
+    margin: 1rem;
+}

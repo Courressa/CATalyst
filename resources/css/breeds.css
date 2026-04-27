@@ -60,6 +60,8 @@
     margin: 1rem 2rem;
 }
 
+
+/* Styles for the info arrow and favorite icon for breeds and favorites page*/
 .info-arrow {
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -72,6 +74,7 @@
 .favorite-icon i {
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 0.5rem;
 }
 
 .favorite-icon i:hover {
