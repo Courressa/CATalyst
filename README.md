@@ -14,7 +14,7 @@
 - Dedicated Favourites page with additional images
 - Responsive design tested across many devices
 
-![Homepage for Project CATalyst]()
+![Homepage for Project CATalyst](https://github.com/user-attachments/assets/e0bcae11-aa1a-4625-9ae7-49401f509bcb)
 
 <br>
 
