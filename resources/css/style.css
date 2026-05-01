@@ -27,6 +27,7 @@ h2, h3 {
     font-family: 'Cherry Bomb One', cursive;
     font-weight: 400;
     font-size: 3rem;
+    text-align: center;
 }
 
 p {
@@ -34,7 +35,7 @@ p {
 }
 
 
-/* Header color: #4b6a88;*/
+/* Header */
 
 .header-container {
     display: flex;
@@ -166,7 +167,6 @@ main {
     display: flex;
     justify-content: center;
     padding: 2rem 0;
-    
 }
 
 .about-layout p {
@@ -174,7 +174,7 @@ main {
 }
 
 .about-layout div {
-    padding-top: 7rem;
+    padding: 7rem 2rem 0rem 2rem;
     background-color: #126e7e77;
     width: 40%;
 }
@@ -219,4 +219,149 @@ footer {
     color: #006f94;
     text-align: center;
     padding: 1rem;
+}
+
+/* Responsiveness*/
+
+@media only screen and (max-width: 1024px) {
+    #about-catalyst img {
+        width: 65%;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    nav ul li a {
+        width: 9rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2, h3 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 1rem;
+        border-radius: 0.7rem;
+        width: 8rem;
+        font-weight: 200;
+        font-size: 1.3rem;
+    }
+
+    #welcome h2 {
+        font-size: 6rem;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        height: 10rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        width: 28rem;
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        margin-left: 0rem;
+    }
+
+    #welcome h2 {
+        font-size: 4.5rem;
+        padding: 1rem;
+    }
+
+    .about-layout div {
+        padding: 7rem 1rem 0rem 1rem;
+    }
+
+    #about-catalyst img {
+        width: 60%;
+        height: 25rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .header-container {
+        height: 14rem;
+    }
+
+    nav ul {
+        width: 100%;
+        flex-flow: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem;
+    }
+
+    #welcome h2 {
+        font-size: 3.3rem;
+        padding: 0.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    #about-catalyst img {
+        width: 80%;
+    }
+
+    .about-layout {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .about-layout div {
+        width: 72%;
+        padding: 5rem 1rem 2rem 1rem;
+    }
+
+    .left-design div {
+        border-radius: 0.5rem;
+        position: relative;
+        left: 5rem;
+        top: -5rem;
+    }
+
+    .left-design img {
+        border-radius: 0.5rem;
+        position: relative;
+        left: -1.8rem;
+    }
+
+    .right-design div {
+        border-radius: 0.5rem;
+        position: relative;
+        top: 21rem;
+    }
+
+    .right-design img {
+        border-radius: 0.5rem;
+        position: relative;
+        left: 1.8rem;
+        top: -17rem;
+    }
 }

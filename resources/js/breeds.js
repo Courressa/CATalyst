@@ -34,7 +34,6 @@ const renderBreeds = (breeds) => {
     breeds.forEach(breed => {
         const breedCard = document.createElement('div');
         breedCard.classList.add('breed-card');
-        console.log(breed);
         const altName = breed.alt_names ? breed.alt_names : "None";
 
         breedCard.innerHTML = `

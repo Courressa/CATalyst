@@ -9,9 +9,8 @@ async function getFavBreedsImages(breedId, breedName, cardElement) {
 
         if (response.ok) {
             const jsonResponse = await response.json();
-            const favoriteImagesContainer = cardElement.querySelector('.favourite-images');
+            const favoriteImagesContainer = cardElement.querySelector('#favourite-images');
 
-            console.log('Fetched breed image:', jsonResponse);
             jsonResponse.forEach(imageData => {
                 const imageElement = document.createElement('img');
                 
@@ -33,8 +32,8 @@ const renderFavourites = (favourites) => {
 
     if (favourites.length === 0) {
         favouriteContainer.innerHTML = `
-        <p>No favourites added as yet.</p>
-        <p>Explore the <a href="breeds.html">breeds page</a> to add some!</p>
+        <p class="no-favourites">No favourites added as yet.</p>
+        <p class="no-favourites">Explore the <a href="breeds.html">breeds page</a> to add some!</p>
         `;
         return;
     }
@@ -73,7 +72,7 @@ const renderFavourites = (favourites) => {
                     <p><strong>Stranger Friendly:</strong> ${favourite.stranger_friendly}/5</p>
                     <p><strong>Dog Friendly:</strong> ${favourite.dog_friendly}/5</p>
                     
-                    <div class="favourite-images">
+                    <div id="favourite-images">
                         <!-- Image elements will be dynamically inserted here -->
                     </div>
                 </div>
@@ -108,13 +107,10 @@ const renderFavourites = (favourites) => {
             const index = favouriteBreeds.findIndex(fav => fav.id === favourite.id);
                 
             if (index !== -1) {
-                console.log("Removed favourite!!!");
                 favouriteBreeds.splice(index, 1);
                 localStorage.setItem('favouriteBreeds', JSON.stringify(favouriteBreeds));
                 
                 favouriteCard.classList.add('removed');
-
-                
 
                 removedFavInterval = setInterval(() => {
                     renderFavourites(favouriteBreeds);

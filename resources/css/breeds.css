@@ -65,6 +65,7 @@
 .info-arrow {
     cursor: pointer;
     transition: transform 0.3s ease;
+    padding: 0.5rem;
 }
 
 .info-arrow.rotated {
@@ -74,7 +75,7 @@
 .favorite-icon i {
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
 }
 
 .favorite-icon i:hover {
@@ -90,4 +91,43 @@
 .favorite-icon i.liked {
     color: #dd0101;
     font-size: 1.4rem;
+}
+
+/* Responsiveness*/
+@media only screen and (max-width: 1024px) {
+    #breed-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .breed-info.visible {
+        max-height: 25rem;
+    }
+}
+
+@media only screen and (max-width: 912px) {
+    #breeds h2 {
+        font-size: 3rem;
+    }
+
+    #breed-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .breed-info.visible {
+        max-height: 20rem;
+    }
+
+    .breed-card-icons {
+        margin: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #breeds h2 {
+        font-size: 2.5rem;
+    }
+
+    #breed-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
