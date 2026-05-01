@@ -84,7 +84,6 @@
 
 ## <p align="center">🚀How to Run Locally🚀</p>
 <div align="center">
-    
-    1. Clone the repository
-    2. Open `index.html` in your browser
+    <p>1. Clone the repository</p>
+    <p>2. Open `index.html` in your browser</p>
 </div>
