@@ -18,7 +18,7 @@
 
 <br>
 
-<p align="center"> <strong>Try It Here: <a href="https://courressa.github.io/CATalyst/" target="_blank">CATalyst</a> </strong></p>
+<p align="center"> <strong>Try It Here: <a href="http://courressa.com/CATalyst/" target="_blank">CATalyst</a> </strong></p>
 
 <br>
 <br>
