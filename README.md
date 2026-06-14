@@ -4,8 +4,6 @@
 <p align="center">This is a website created for cat lovers and all those who might be even the slightest bit intrigued about cats, to explore a world of different cat breeds. </p>
 
 <br>
-<br>
-<br>
 
 ## <p align="center">✨Features✨</p>
 
