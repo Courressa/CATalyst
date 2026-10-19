@@ -5,7 +5,9 @@ async function getFavBreedsImages(breedId, breedName, cardElement) {
     const urlToFetch = `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breedId}`;
 
     try {
-        const response = await fetch(urlToFetch);
+        const response = await fetch(urlToFetch, {
+            headers: { "x-api-key": "live_6X6uRKo9m3DJ3ZCY2s42PzQChYnkldNJb72fpFbYZ949mcL2QxWmAD8RFNsBpcYh" }, // Free-tier Cat API key
+        });
 
         if (response.ok) {
             const jsonResponse = await response.json();
