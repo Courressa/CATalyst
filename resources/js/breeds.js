@@ -32,7 +32,7 @@ const renderBreeds = (breeds) => {
         `;
         return;
     };
-
+    console.log("Breeds: ", breeds);
     breeds.forEach(breed => {
         const breedCard = document.createElement('div');
         breedCard.classList.add('breed-card');
@@ -59,13 +59,6 @@ const renderBreeds = (breeds) => {
                     <p><strong>A.K.A.:</strong> ${altName}</p>
                     <p><strong>Temperament:</strong> ${breed.temperament}</p>
                     <p><strong>Life Span:</strong> ${breed.life_span} years</p>
-                    <p><strong>Intelligence:</strong> ${breed.intelligence}/5</p>
-                    <p><strong>Energy Level:</strong> ${breed.energy_level}/5</p>
-                    <p><strong>Affection Level:</strong> ${breed.affection_level}/5</p>
-                    <p><strong>Shedding Level:</strong> ${breed.shedding_level}/5</p>
-                    <p><strong>Child Friendly:</strong> ${breed.child_friendly}/5</p>
-                    <p><strong>Stranger Friendly:</strong> ${breed.stranger_friendly}/5</p>
-                    <p><strong>Dog Friendly:</strong> ${breed.dog_friendly}/5</p>
                 </div>
             </div>
 

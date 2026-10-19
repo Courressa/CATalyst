@@ -66,13 +66,6 @@ const renderFavourites = (favourites) => {
                     <p><strong>A.K.A.:</strong> ${altName}</p>
                     <p><strong>Temperament:</strong> ${favourite.temperament}</p>
                     <p><strong>Life Span:</strong> ${favourite.life_span} years</p>
-                    <p><strong>Intelligence:</strong> ${favourite.intelligence}/5</p>
-                    <p><strong>Energy Level:</strong> ${favourite.energy_level}/5</p>
-                    <p><strong>Affection Level:</strong> ${favourite.affection_level}/5</p>
-                    <p><strong>Shedding Level:</strong> ${favourite.shedding_level}/5</p>
-                    <p><strong>Child Friendly:</strong> ${favourite.child_friendly}/5</p>
-                    <p><strong>Stranger Friendly:</strong> ${favourite.stranger_friendly}/5</p>
-                    <p><strong>Dog Friendly:</strong> ${favourite.dog_friendly}/5</p>
                     
                     <div id="favourite-images">
                         <!-- Image elements will be dynamically inserted here -->
