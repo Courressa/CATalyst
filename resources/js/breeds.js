@@ -32,7 +32,7 @@ const renderBreeds = (breeds) => {
         `;
         return;
     };
-    console.log("Breeds: ", breeds);
+    
     breeds.forEach(breed => {
         const breedCard = document.createElement('div');
         breedCard.classList.add('breed-card');
